@@ -27,3 +27,14 @@ def solution(n):
     
     answer = count
     return answer
+
+#정수 제곱근 판별
+
+import math
+
+def solution(n):
+    sqrt = math.sqrt(n)
+    if(sqrt.is_integer()):
+        return (sqrt+1)**2
+    else:
+        return -1
