@@ -38,3 +38,18 @@ def solution(n):
         return (sqrt+1)**2
     else:
         return -1
+    
+#2016년
+def solution(a, b):
+    day = 0
+    for i in range(1, a):
+        if(i == 1 or i == 3 or i == 5 or i == 7 or i == 8 or i== 10 or i ==12):
+            day += 31
+        elif(i == 2):
+            day += 29
+        elif(i == 4 or i == 6 or i == 9 or i == 11):
+            day += 30
+    day += b
+    day = day % 7
+    days = ['THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED']
+    return days[day]
