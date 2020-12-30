@@ -53,3 +53,10 @@ def solution(a, b):
     day = day % 7
     days = ['THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED']
     return days[day]
+
+#최댓값과 
+def solution(s):
+    s_list = list(map(int, s.split(' ')))
+    s_list = sorted(s_list)
+    answer = str(s_list[0]) + ' ' + str(s_list[-1])
+    return answer
