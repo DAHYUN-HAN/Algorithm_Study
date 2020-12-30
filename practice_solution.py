@@ -54,9 +54,21 @@ def solution(a, b):
     days = ['THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED']
     return days[day]
 
-#최댓값과 
+#최댓값과 최솟값
 def solution(s):
     s_list = list(map(int, s.split(' ')))
     s_list = sorted(s_list)
     answer = str(s_list[0]) + ' ' + str(s_list[-1])
+    return answer
+
+#최솟값 만들기
+
+def solution(A,B):
+    answer = 0
+    A = sorted(A)
+    B = sorted(B, reverse=True)
+    
+    for i in range(len(A)):
+        answer = answer + A[i]*B[i]
+        
     return answer
