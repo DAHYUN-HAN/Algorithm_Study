@@ -1,5 +1,4 @@
 #수박수박수박수박수박수?
-
 def solution(n):
     answer = ''
     for i in range(n):
@@ -10,7 +9,6 @@ def solution(n):
     return answer
     
 #소수 찾기
-
 def solution(n):
     all_number = [True]*(n+1)
     m = int((n+1) ** 0.5)
@@ -29,7 +27,6 @@ def solution(n):
     return answer
 
 #정수 제곱근 판별
-
 import math
 
 def solution(n):
@@ -62,7 +59,6 @@ def solution(s):
     return answer
 
 #최솟값 만들기
-
 def solution(A,B):
     answer = 0
     A = sorted(A)
@@ -74,9 +70,19 @@ def solution(A,B):
     return answer
 
 #내적
-
 def solution(a, b):
     answer = 0
     for i in range(len(a)):
         answer += a[i]*b[i]
+    return answer
+
+#3진법 뒤집기
+def solution(n):
+    answer = 0
+    ternary = []
+    while(n != 0):
+        ternary.append(n%3)
+        n = n // 3
+    for i in range(len(ternary)):
+        answer += ternary[i] * (3**(len(ternary)-1-i))
     return answer
