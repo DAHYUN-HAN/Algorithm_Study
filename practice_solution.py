@@ -86,3 +86,243 @@ def solution(n):
     for i in range(len(ternary)):
         answer += ternary[i] * (3**(len(ternary)-1-i))
     return answer
+
+#가운데 글자 가져오기
+def solution(s):
+    middle = len(s) // 2
+    if(len(s)%2 == 1):
+        answer = s[middle]
+    else:
+        answer = s[middle-1:middle+1]
+    return answer
+
+#같은 숫자는 싫어
+def solution(arr):
+    answer = []
+    for i in arr:
+        if(answer):
+            if(answer[-1] != i):
+                answer.append(i)
+        else:
+            answer.append(i)
+    return answer
+
+#두 정수 사이의 합
+def solution(a, b):
+    answer = 0
+    if(a > b):
+        big = a
+        small = b
+    else:
+        big = b
+        small = a
+    for i in range(small, big+1):
+        answer += i
+    return answer
+
+#나누어 떨어지는 숫자 배열
+def solution(arr, divisor):
+    answer = []
+    for i in arr:
+        if(i % divisor == 0):
+            answer.append(i)
+    if(answer):
+        answer = sorted(answer)
+    else:
+        answer.append(-1)
+    return answer
+
+#문자열 내 마음대로 정렬하기
+def solution(strings, n):
+    answer = []
+    string_list = []
+    strings = sorted(strings)
+    for i in strings:
+        string_list.append((i[n], i))
+    string_list.sort(key = lambda x:x[0])
+    for i in string_list:
+        answer.append(i[1])
+    return answer
+
+#문자열 다루기 기본
+def solution(s):
+    answer = False
+    length = len(s)
+    if(length == 4 or length == 6):
+        if(s.isdigit()):
+            answer = True
+    return answer
+
+#서울에서 김서방 찾기
+def solution(seoul):
+    for i in range(len(seoul)):
+        if(seoul[i]=='Kim'):
+            index = i
+            break
+    answer = "김서방은 " + str(index) + "에 있다"
+    return answer
+
+#약수의 합
+def solution(n):
+    answer = 0
+    for i in range(n):
+        if(n%(i+1) == 0):
+            answer += i+1
+    return answer
+
+#이상한 문자 만들기
+def solution(s):
+    answer = ''
+    s_list = s.split(' ')
+    for word in s_list:
+        for i in range(len(word)):
+            if(i%2 == 0):
+                answer += word[i].upper()
+            else:
+                answer += word[i].lower()
+        answer += ' '
+    answer = answer[:-1]
+    return answer
+
+#행렬의 덧셈
+def solution(arr1, arr2):
+    answer = []
+    for i in range(len(arr1)):
+        inner_list = []
+        for j in range(len(arr1[i])):
+            inner_list.append(arr1[i][j] + arr2[i][j])
+        answer.append(inner_list)
+    return answer
+
+#x만큼 간격이 있는 n개의 숫자
+def solution(x, n):
+    answer = []
+    number = x
+    while(len(answer) != n):
+        answer.append(number)
+        number = number+x
+    return answer
+
+#직사각형 별 찍기
+a, b = map(int, input().strip().split(' '))
+
+for i in range(b):
+    for j in range(a):
+        print('*', end='')
+    print()
+
+#핸드폰 번호 가리기
+def solution(phone_number):
+    answer = ''
+    length = len(phone_number)
+    for i in range(length-4):
+        answer += '*'
+        
+    for i in range(length-4, length):
+        answer += phone_number[i]
+    return answer
+
+#하샤드 수
+def solution(x):
+    answer = False
+    string_x = str(x)
+    sum = 0
+    for i in string_x:
+        sum += int(i)
+    if(x % sum == 0):
+        answer = True
+    return answer
+
+#콜라츠 추측
+def solution(num):
+    answer = 0
+    while(num != 1):
+        answer += 1
+        if(num % 2 == 0):
+            num = num // 2
+        else:
+            num = num*3 + 1
+        if(answer > 500):
+            answer = -1
+            break
+    return answer
+
+#시저 암호
+def solution(s, n):
+    answer = ''
+    print(ord('A'), ord('a'), ord('Z'), ord('z'))
+    for i in s:
+        if(i == ' '):
+            answer += ' '
+            continue
+        number = ord(i)
+        new_number = number + n
+        if(number >= 97 and number <= 122):
+            if(new_number > 122):
+                new_number -= 26
+        else:
+            if(new_number > 90):
+                new_number -= 26
+        answer += chr(new_number)
+    return answer
+
+#자릿수 더하기
+def solution(n):
+    answer = 0
+    string_number = str(n)
+    
+    for i in string_number:
+        answer += int(i)
+
+    return answer
+
+#자연수 뒤집어 배열로 만들기
+def solution(n):
+    string_n = str(n)
+    answer = list(map(int,string_n))
+    answer = list(reversed(answer))
+    return answer
+
+#짝수와 홀수
+def solution(num):
+    if(num % 2 == 0):
+        answer = 'Even'
+    else:
+        answer = 'Odd'
+    return answer
+
+#정수 내림차순으로 배치하기
+def solution(n):
+    answer = str(n)
+    answer = sorted(answer, reverse=True)
+    answer = int(''.join(answer))
+    return answer
+
+#제일 작은 수 제거하기
+import numpy as np
+def solution(arr):
+    answer = arr
+    if(len(arr) == 1):
+        return [-1]
+    min = np.min(arr)
+    answer.remove(min)
+    return answer
+
+#최대공약수와 최소공배수
+def solution(n, m):
+    if(n > m):
+        a = n
+        b = m
+    else:
+        a = m
+        b = n
+        
+    while(b != 0):
+        temp = a % b
+        a = b
+        b = temp
+    GDC = a
+    LCM = n * m / GDC
+    answer = [GDC, LCM]
+    return answer
+
