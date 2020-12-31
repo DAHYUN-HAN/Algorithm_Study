@@ -72,3 +72,11 @@ def solution(A,B):
         answer = answer + A[i]*B[i]
         
     return answer
+
+#내적
+
+def solution(a, b):
+    answer = 0
+    for i in range(len(a)):
+        answer += a[i]*b[i]
+    return answer
