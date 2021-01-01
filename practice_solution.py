@@ -369,3 +369,10 @@ def solution(nums):
         if(len(answer_list) == get):
             return get
     return len(answer_list)
+
+#행렬의 곱셈
+import numpy as np
+
+def solution(arr1, arr2):
+    answer = np.dot(arr1, arr2).tolist()
+    return answer
