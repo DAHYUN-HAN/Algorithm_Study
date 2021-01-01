@@ -346,3 +346,15 @@ def solution(n):
         if(i % 2 == 1 and n % i == 0):
             answer += 1
     return answer
+
+#이진 변환 반복하기
+def solution(s):
+    time = 0
+    delete = 0
+    while(s != '1'):
+        time += 1
+        count = s.count('1')
+        delete += s.count('0')
+        s = str(bin(count)[2:])
+    answer = [time, delete]
+    return answer
