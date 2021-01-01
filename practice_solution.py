@@ -337,3 +337,12 @@ def solution(n, m):
     answer = [GDC, LCM]
     return answer
 
+#숫자의 표현
+def solution(n):
+    answer = 1
+    if(n % 2 == 1):
+        answer += 1
+    for i in range(3, n//2+1):
+        if(i % 2 == 1 and n % i == 0):
+            answer += 1
+    return answer
