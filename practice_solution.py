@@ -358,3 +358,14 @@ def solution(s):
         s = str(bin(count)[2:])
     answer = [time, delete]
     return answer
+
+#폰켓몬
+def solution(nums):
+    answer_list = []
+    get = len(nums) // 2
+    for i in nums:
+        if(not i in answer_list):
+            answer_list.append(i)
+        if(len(answer_list) == get):
+            return get
+    return len(answer_list)
