@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-class Solution {
+class phonenumber_solution {
     public boolean solution(String[] phone_book) {
         boolean answer = true;
         HashMap<String,String> map = new HashMap<>();//new에서 타입 파라미터 생략가능
